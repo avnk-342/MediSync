@@ -54,9 +54,9 @@
           <li><a class="active " href="index.html">Home</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="medical_info.html">Medical Info</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="#">Medical Info</a></li>
-          <li><a href="team.html">Team</a></li>
+          <!-- <li><a href="services.html">Services</a></li> -->
+          <!-- <li><a href="#">Medical Info</a></li> -->
+          <!-- <li><a href="team.html">Team</a></li> -->
           <li><a href="blog.html">Blog</a></li>
           <!-- <li class="dropdown"><a href="#"><span>Drop Down</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -302,7 +302,7 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <!-- <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li> -->
               <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
             </ul>
@@ -348,14 +348,14 @@
 
     <div class="container">
       <div class="copyright">
-        &copy; Copyright <strong><span>Moderna</span></strong>. All Rights Reserved
+        &copy; Copyright <strong><span>MediSync</span></strong>. All Rights Reserved
       </div>
       <div class="credits">
         <!-- All the links in the footer should remain intact. -->
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        <!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
       </div>
     </div>
   </footer><!-- End Footer -->
@@ -364,7 +364,26 @@
 
   <!-- Bot files (anmol) -->
   <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/32a63695-818d-44ec-bd6c-01802edfdb6d/webchat/config.js" defer></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with LOL",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "32a63695-818d-44ec-bd6c-01802edfdb6d",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "32a63695-818d-44ec-bd6c-01802edfdb6d",
+      "webhookId": "83992aad-a4d2-4706-b289-157af7cea430",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "MediPer",
+      "stylesheet": "https://webchat-styler-css.botpress.app/prod/6adf7aca-d511-480d-8125-3a8c15ad215e/v22145/style.css",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
