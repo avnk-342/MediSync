@@ -364,7 +364,26 @@
 
   <!-- Bot files (anmol) -->
   <script src="https://cdn.botpress.cloud/webchat/v1/inject.js"></script>
-<script src="https://mediafiles.botpress.cloud/32a63695-818d-44ec-bd6c-01802edfdb6d/webchat/config.js" defer></script>
+<script>
+  window.botpressWebChat.init({
+      "composerPlaceholder": "Chat with LOL",
+      "botConversationDescription": "This chatbot was built surprisingly fast with Botpress",
+      "botId": "32a63695-818d-44ec-bd6c-01802edfdb6d",
+      "hostUrl": "https://cdn.botpress.cloud/webchat/v1",
+      "messagingUrl": "https://messaging.botpress.cloud",
+      "clientId": "32a63695-818d-44ec-bd6c-01802edfdb6d",
+      "webhookId": "83992aad-a4d2-4706-b289-157af7cea430",
+      "lazySocket": true,
+      "themeName": "prism",
+      "botName": "MediPer",
+      "stylesheet": "https://webchat-styler-css.botpress.app/prod/6adf7aca-d511-480d-8125-3a8c15ad215e/v22145/style.css",
+      "frontendVersion": "v1",
+      "useSessionStorage": true,
+      "showPoweredBy": true,
+      "theme": "prism",
+      "themeColor": "#2563eb"
+  });
+</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
