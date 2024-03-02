@@ -2327,7 +2327,6 @@ section {
 
 .main_div1 input{
   display: flex;
-  /* margin-left: 30px; */
   width: 80%;
   height: 30%;
   border-radius: 80px;
@@ -2339,4 +2338,6 @@ section {
   border-radius: 10px;
   width: 5%;
   height: 25%;
+  
+  z-index: 99999;
 }
