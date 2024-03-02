@@ -2315,3 +2315,28 @@ section {
 #footer .credits a {
   color: #a2cce3;
 }
+
+
+.main_div1{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.main_div1 input{
+  display: flex;
+  /* margin-left: 30px; */
+  width: 80%;
+  height: 30%;
+  border-radius: 80px;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.main_div1 button{
+  border-radius: 10px;
+  width: 5%;
+  height: 25%;
+}
