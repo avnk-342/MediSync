@@ -348,7 +348,7 @@ h6,
   top: 0;
   width: 130%;
   height: 95%;
-  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("C:\Users\annie\Downloads\MediSync\assets\hero-bg.jpg") center top no-repeat;
+  background: linear-gradient(to right, rgba(30, 67, 86, 0.8), rgba(30, 67, 86, 0.6)), url("../img/hero-bg.jpg") center top no-repeat;
   z-index: 0;
   border-radius: 0 0 50% 50%;
   transform: translateX(-50%) rotate(0deg);
@@ -2314,4 +2314,29 @@ section {
 
 #footer .credits a {
   color: #a2cce3;
+}
+
+
+.main_div1{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.main_div1 input{
+  display: flex;
+  /* margin-left: 30px; */
+  width: 80%;
+  height: 30%;
+  border-radius: 80px;
+  border: 1px solid black;
+  padding: 8px;
+}
+
+.main_div1 button{
+  border-radius: 10px;
+  width: 5%;
+  height: 25%;
 }
