@@ -55,7 +55,7 @@
           <!-- <li><a href="services.html">Services</a></li> -->
           <!-- <li><a href="portfolio.html">Portfolio</a></li> -->
           <!-- <li><a href="team.html">Team</a></li> -->
-
+          <li><a href="diet.html">Diet</a></li>
           <li><a class="active" href="blog.html">Blog</a></li>
           <li><a href="contact.html">Contact Us</a></li>
         </ul>
@@ -86,8 +86,8 @@
     <!-- ======= Blog Section ======= -->
     <section>
         <div class="main_div1">
-            <input type="text" placeholder="Search....">
-            <button type="submit">Search</button>
+            <input type="text" placeholder="Search...." id="text_search">
+            <button type="submit" id="search-btn">Search</button>
         </div>
     </section>
 
@@ -98,103 +98,8 @@
         <div class="row">
 
           <div class="col-lg-8 entries" id="repeat_div">
+            <p id="repeat_p"></p>
             
-            <!-- Article start -->
-            <article class="entry" id="repeat_element">
-
-              <div class="entry-img">
-                <img src="" alt="" id="image_article" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="" id="article_links" ><span id="article1"></span></a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="" id="article_links"><span id="author_name"></span></a></li>
-                  <li class="d-flex align-items-center" ><i class="bi bi-clock"></i> <a href="" id="article_links"><time datetime="2020-01-01"><span id="article_date"></span></time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p id="article_discription">
-                </p>
-              </div>
-
-            </article>
-
-            <article class="entry" id="repeat_element1">
-
-              <div class="entry-img">
-                <img src="" alt="" id="image_article1" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="" id="article_links1" ><span id="article11"></span></a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="" id="article_links1"><span id="author_name1"></span></a></li>
-                  <li class="d-flex align-items-center" ><i class="bi bi-clock"></i> <a href="" id="article_links1"><time datetime="2020-01-01"><span id="article_date1"></span></time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p id="article_discription1">
-                </p>
-              </div>
-
-            </article>
-
-            <article class="entry" id="repeat_element2">
-
-              <div class="entry-img">
-                <img src="" alt="" id="image_article2" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="" id="article_links2" ><span id="article12"></span></a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="" id="article_links2"><span id="author_name2"></span></a></li>
-                  <li class="d-flex align-items-center" ><i class="bi bi-clock"></i> <a href="" id="article_links2"><time datetime="2020-01-01"><span id="article_date2"></span></time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p id="article_discription2">
-                </p>
-              </div>
-
-            </article>
-
-            <article class="entry" id="repeat_element3">
-
-              <div class="entry-img">
-                <img src="" alt="" id="image_article3" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="" id="article_links3" ><span id="article13"></span></a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="bi bi-person"></i> <a href="" id="article_links3"><span id="author_name3"></span></a></li>
-                  <li class="d-flex align-items-center" ><i class="bi bi-clock"></i> <a href="" id="article_links3"><time datetime="2020-01-01"><span id="article_date3"></span><time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p id="article_discription3">
-                </p>
-              </div>
-
-            </article>
           </div>
         </div>
 
@@ -274,55 +179,44 @@
   <script src="assets/js/main.js"></script>
 
   <!-- Custom JS (anmol) -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
   <script>
-const apiKey = 'ef417fd2d462424bb5587a22e3738147';
-const categories = ['health', 'fitness', 'lifestyle'];
+    
+    function displayData(){
+        
+        var query = document.querySelector('#text_search').value
+        console.log(query)
+        $.ajax({
+        method: 'GET',
+        url: 'https://api.api-ninjas.com/v1/nutrition?query=' + query,
+        headers: { 'X-Api-Key': '2jtFaQWau5Kmun7YbIOVsg==kO2uhpMC7wWObOmW'},
+        contentType: 'application/json',
+        success: function(result) {
+            console.log(result)
+            $.each(result, function(key, data) {
+            console.log(key + ' -> ' + data);
+            });
+            // for (let i = 0; i < result["length"]; i++) {
+            //     document.querySelector('#repeat_p').textContent += result[i].JSON.stringify()
+            //     document.querySelector('#repeat_p').textContent += result[i]["calories"]
+                
+            // }
+            // document.querySelector('#repeat_p').textContent += "\n"
+            
+        },
+        error: function ajaxError(jqXHR) {
+            console.error('Error: ', jqXHR.responseText);
+        }
+        });
+
+        
+    }
+    const btn = document.querySelector('#search-btn')
+    btn.addEventListener("click", displayData)
+
  
-Promise.all(categories.map(category => (
-    fetch(`https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${apiKey}`)
-        .then(response => response.json())
-        .then( data=>{
-          console.log(data["articles"]["15"])
-          
-          
 
-          document.querySelector("#article1").textContent=data["articles"]["0"]["title"]
-          document.querySelector("#author_name").textContent=data["articles"]["0"]["author"]
-          document.querySelector("#image_article").src = data["articles"]["0"]["urlToImage"]
-          document.querySelector("#article_date").textContent = data["articles"]["0"]["publishedAt"].slice(0,10)
-          document.querySelector("#article_discription").textContent = data["articles"]["0"]["description"]
-          document.querySelector("#article_links").href = data["articles"]["0"]["url"]
-
-          document.querySelector("#article11").textContent=data["articles"]["15"]["title"]
-          document.querySelector("#author_name1").textContent=data["articles"]["15"]["author"]
-          document.querySelector("#image_article1").src = data["articles"]["15"]["urlToImage"]
-          document.querySelector("#article_date1").textContent = data["articles"]["15"]["publishedAt"].slice(0,10)
-          document.querySelector("#article_discription1").textContent = data["articles"]["15"]["description"]
-          document.querySelector("#article_links1").href = data["articles"]["15"]["url"]
-
-          document.querySelector("#article12").textContent=data["articles"]["2"]["title"]
-          document.querySelector("#author_name2").textContent=data["articles"]["2"]["author"]
-          document.querySelector("#image_article2").src = data["articles"]["2"]["urlToImage"]
-          document.querySelector("#article_date2").textContent = data["articles"]["2"]["publishedAt"].slice(0,10)
-          document.querySelector("#article_discription2").textContent = data["articles"]["2"]["description"]
-          document.querySelector("#article_links2").href = data["articles"]["2"]["url"]
-
-          document.querySelector("#article13").textContent=data["articles"]["19"]["title"]
-          document.querySelector("#author_name3").textContent=data["articles"]["19"]["author"]
-          document.querySelector("#image_article3").src = data["articles"]["19"]["urlToImage"]
-          document.querySelector("#article_date3").textContent = data["articles"]["19"]["publishedAt"].slice(0,10)
-          document.querySelector("#article_discription3").textContent = data["articles"]["19"]["description"]
-          document.querySelector("#article_links3").href = data["articles"]["19"]["url"]
-        })
-)))
-.then(results => {
-    // Combine results from all categories
-    const allArticles = results.flat();
-    console.log(allArticles);
-})
-.catch(error => {
-    console.error('Error fetching articles:', error);
-});
   </script>
 
 </body>
